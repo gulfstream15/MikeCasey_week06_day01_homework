@@ -5,11 +5,13 @@ public class BusTest {
 
   Bus bus;
   Person person;
+  BusStop busstop;
 
   @Before 
   public void before() {
     bus = new Bus("Balerno");
-    person = new Person();
+    person = new Person("Steve", "Jones");
+    busstop = new BusStop("Canning Exchange");
   }
 
   @Test
@@ -50,6 +52,18 @@ public class BusTest {
     bus.loadPassengers(person);    
     bus.BackToDepot();
     assertEquals(0, bus.passengerCount());
+  }
+
+  @Test
+  public void getPersonFirstName() {
+    Person person = new Person("Steve", "Jones");
+    assertEquals("Steve", person.getfirstName());
+  }
+
+  @Test
+  public void getBusStopName() {
+    BusStop busstop = new BusStop("Canning Exchange");
+    assertEquals("Canning Exchange", busstop.getStopName());
   }
 
 }

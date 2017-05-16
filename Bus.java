@@ -12,6 +12,10 @@ class Bus {
     return this.route;
   }
 
+  public void setRoute(String route) {
+    this.route = route;    
+  }
+
   public int passengerCount() {
     int count = 0;
     for (Person passanger : passangers) {
